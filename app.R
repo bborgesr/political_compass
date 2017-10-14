@@ -1,17 +1,26 @@
 
 library(shiny)
 library(ggplot2)
-library(grid)
+library(tibble)
 
-results <- tibble::tibble(
-  name = c("Barbara", "Fuso", "Skeptic"),
-  economic = c(-8.63, 1.25, -0.60),
-  social = c(-7.33, -7.79, -3.20)
+results <- tibble(
+  name = c("Tomas", "Barbara", "Fuso", "Skeptic"),
+  economic = c(-4.5, -8.63, 1.25, -0.60),
+  social = c(-4.92, -7.33, -7.79, -3.20)
 )
   
   
 ui <- fluidPage(
-  plotOutput("plt", width = "100%", height = "800px")
+  titlePanel("Political Compass results"),
+  sidebarLayout(
+    sidebarPanel(
+      helpText("You can take the test ", 
+        a("here", href = "https://www.politicalcompass.org/test"))
+    ),
+    mainPanel(
+      plotOutput("plt", width = "100%", height = "800px")
+    )
+  )
 )
 
 server <- function(input, output, session) {
