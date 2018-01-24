@@ -5,9 +5,9 @@ library(extrafont)
 loadfonts()
 
 results <- tibble(
-  name = c("Tomas", "Barbara", "Fuso", "Skeptic", "TJ Kirk"),
-  economic = c(-4.5, -8.63, 1.25, -0.60, -6.3),
-  social = c(-4.92, -7.33, -7.79, -3.20, -6.9)
+  name = c("Tomas", "Barbara", "Fuso", "Skeptic", "TJ Kirk", "Franjas"),
+  economic = c(-4.5, -8.63, 1.25, -0.60, -6.3, -3.25),
+  social = c(-4.92, -7.33, -7.79, -3.20, -6.9, -4.62)
 )
 
 thm <- theme_bw() +
