@@ -1,0 +1,28 @@
+---
+title: "Political Compass results"
+output:
+  html_document:
+    fig_width: 8
+    fig_height: 8
+---
+
+<hr/>
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Cutive');
+  body { font-family: 'Cutive', serif; }
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source("helpers.R")
+```
+
+<p style = "color: grey;">
+_You can take the test [here](https://www.politicalcompass.org/test")._
+</p>
+
+Here are the results I've collected so far:
+
+```{r plot, echo=FALSE}
+getPlot()
+```

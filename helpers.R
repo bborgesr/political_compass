@@ -1,5 +1,8 @@
 library(ggplot2)
 library(tidyverse)
+library(extrafont)
+
+loadfonts()
 
 results <- tibble(
   name = c("Tomas", "Barbara", "Fuso", "Skeptic", "TJ Kirk"),
@@ -35,19 +38,20 @@ getPlot <- function() {
     annotate("rect", xmin =   0, xmax = 10, ymin = -10, ymax =  0, fill = "#bf9ce8") +
     annotate("rect", xmin = -10, xmax =  0, ymin =   0, ymax = 10, fill = "#fd7678") +
     annotate("rect", xmin =   0, xmax = 10, ymin =   0, ymax = 10, fill = "#48acfc") +
-    annotate("text", x = 0, y = 9.5, label = "authoritarian", fontface = "bold",size = 7, color = "black") +
-    annotate("text", x = 0, y = -9.5, label = "libertarian", fontface = "bold", size = 7, color = "black") +
-    annotate("text", x = -9.3, y = 0.5, label = "left", fontface = "bold", size = 7, color = "black") +
-    annotate("text", x = 9, y = 0.5, label = "right", fontface = "bold", size = 7, color = "black")
+    annotate("text", x = 0, y = 9.5, label = "authoritarian", fontface = "bold",size = 6, color = "#35333d", family = "Andale Mono") +
+    annotate("text", x = 0, y = -9.5, label = "libertarian", fontface = "bold", size = 6, color = "#35333d", family = "Andale Mono") +
+    annotate("text", x = -9, y = 0.5, label = "left", fontface = "bold", size = 6, color = "#35333d", family = "Andale Mono") +
+    annotate("text", x = 9, y = 0.5, label = "right", fontface = "bold", size = 6, color = "#35333d", family = "Andale Mono")
   
   plt3_interceptss <- plt2_annotations +
     geom_vline(xintercept = 0, size = 2) +
     geom_hline(yintercept = 0, size = 2)
   
   plt4_scatter <- plt3_interceptss + 
-    geom_point(size = 3) +
-    geom_text(aes(label = name), hjust = 0, nudge_x = 0.1, size = 5,
-      check_overlap = TRUE, colour = "#708090", fontface = "bold")
+    geom_point(size = 2) +
+    geom_text(aes(label = name), 
+      family = "Trebuchet MS", hjust = 0, nudge_x = 0.1, size = 4,
+      check_overlap = TRUE, colour = "#615c6f", fontface = "bold")
 
   plt4_scatter
 }
