@@ -4,12 +4,11 @@ library(ggplot2)
 library(tibble)
 
 results <- tibble(
-  name = c("Tomas", "Barbara", "Fuso", "Skeptic"),
-  economic = c(-4.5, -8.63, 1.25, -0.60),
-  social = c(-4.92, -7.33, -7.79, -3.20)
+  name = c("Tomas", "Barbara", "Fuso", "Skeptic", "TJ Kirk"),
+  economic = c(-4.5, -8.63, 1.25, -0.60, -6.3),
+  social = c(-4.92, -7.33, -7.79, -3.20, -6.9)
 )
-  
-  
+
 ui <- fluidPage(
   titlePanel("Political Compass results"),
   sidebarLayout(
