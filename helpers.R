@@ -1,13 +1,14 @@
 library(ggplot2)
 library(tidyverse)
 library(extrafont)
+library("ggrepel")
 
-loadfonts()
+# loadfonts()
 
 results <- tibble(
-  name = c("Tomas", "Barbara", "Fuso", "Skeptic", "TJ Kirk", "Franjas", "Esteban"),
-  economic = c(-4.5, -8.63, 1.25, -0.60, -6.3, -3.25, -4.0),
-  social = c(-4.92, -7.33, -7.79, -3.20, -6.9, -4.62, -5.38)
+  name = c("Tomas", "Barbara", "Fuso", "Skeptic", "TJ Kirk", "Franjas", "Esteban", "Vishious"),
+  economic = c(-4.5, -8.63, 1.25, -0.60, -6.3, -3.25, -4.0, -4.25 ),
+  social = c(-4.92, -7.33, -7.79, -3.20, -6.9, -4.62, -5.38, -5.33 )
 )
 
 thm <- theme_bw() +
@@ -49,9 +50,8 @@ getPlot <- function() {
   
   plt4_scatter <- plt3_interceptss + 
     geom_point(size = 2) +
-    geom_text(aes(label = name), 
-      family = "Trebuchet MS", hjust = 0, nudge_x = 0.1, size = 4,
-      check_overlap = TRUE, colour = "#615c6f", fontface = "bold")
+    geom_text_repel(aes(label = name),
+      family = "Trebuchet MS", size = 4, colour = "#615c6f", fontface = "bold")
 
   plt4_scatter
 }
