@@ -6,9 +6,9 @@ library("ggrepel")
 # loadfonts()
 
 results <- tibble(
-  name = c("Tomas", "Barbara", "Fuso", "Skeptic", "TJ Kirk", "Franjas", "Esteban", "Vishious", "Troglo!?", "Sora", "Tita"),
-  economic = c(-4.50, -8.63,  1.25, -0.60, -6.30, -3.25, -4.00, -4.25, 7.25, -6.13, -5.38),
-  social   = c(-4.92, -7.33, -7.79, -3.20, -6.90, -4.62, -5.38, -5.33, 7.44, -4.67, -5.64)
+  name = c("Tomas", "Barbara", "Fuso", "Skeptic", "TJ Kirk", "Franjas", "Esteban", "Vishious", "Troglo!?", "Sora", "Tita", "Tone"),
+  economic = c(-4.50, -8.63,  1.25, -0.60, -6.30, -3.25, -4.00, -4.25, 7.25, -6.13, -5.38, -4.88),
+  social   = c(-4.92, -7.33, -7.79, -3.20, -6.90, -4.62, -5.38, -5.33, 7.44, -4.67, -5.64, -3.33)
 )
 
 thm <- theme_bw() +
