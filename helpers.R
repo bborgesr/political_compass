@@ -6,9 +6,10 @@ library("ggrepel")
 # loadfonts()
 
 results <- tibble(
-  name = c("Tomas", "Barbara", "Fuso", "Skeptic", "TJ Kirk", "Franjas", "Esteban", "Vishious", "Troglo!?", "Sora", "Tita", "Tone"),
-  economic = c(-4.50, -8.63,  1.25, -0.60, -6.30, -3.25, -4.00, -4.25, 7.25, -6.13, -5.38, -4.88),
-  social   = c(-4.92, -7.33, -7.79, -3.20, -6.90, -4.62, -5.38, -5.33, 7.44, -4.67, -5.64, -3.33)
+  name = c("Tomas", "Barbara", "Fuso", "Skeptic", "TJ Kirk", "Franjas", "Esteban", "Vishious", "Troglo!?", "Sora", "Tita", "Tone", "Sofia"),
+  color = c("pc", "pc", "pc", "npc", "npc", "pc", "pc", "pc", "npc", "pc", "pc", "pc", "pc"),
+  economic = c(-4.50, -8.63,  1.25, -0.60, -6.30, -3.25, -4.00, -4.25, 7.25, -6.13, -5.38, -4.88, -4.00),
+  social   = c(-4.92, -7.33, -7.79, -3.20, -6.90, -4.62, -5.38, -5.33, 7.44, -4.67, -5.64, -3.33, -4.05)
 )
 
 thm <- theme_bw() +
@@ -50,8 +51,8 @@ getPlot <- function() {
   
   plt4_scatter <- plt3_interceptss + 
     geom_point(size = 2) +
-    geom_text_repel(aes(label = name),
-      family = "Trebuchet MS", size = 4, colour = "#615c6f", fontface = "bold")
-
+    geom_text_repel(aes(label = name, colour = color),
+      family = "Trebuchet MS", size = 4, fontface = "bold", show.legend = FALSE) +
+      scale_colour_manual(values = c("pc" = "#615c6f", "npc" = "#a6a1b2"))
   plt4_scatter
 }
